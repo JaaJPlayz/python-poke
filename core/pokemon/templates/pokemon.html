@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Pokemon List{% endblock %}
+
+{% block content %}
+  {% for pokemon in all_pokemon %}
+    <h1>{{ pokemon.name }}</h1>
+    <img src="{{ pokemon.sprites.front_default }}" alt="{{ pokemon.name }}">
+    <p>Type: {{ pokemon.types.0.type.name }}</p>
+    <p>Height: {{ pokemon.height }}</p>
+    <p>Weight: {{ pokemon.weight }}</p>
+    <hr>
+    <br>
+  {% endfor %}
+{% endblock %}
